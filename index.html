@@ -104,6 +104,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet" />
+  <script src="/blog.js" defer></script>
 
   <style>
     :root {
@@ -570,6 +571,7 @@
       #page-contact .split { gap: 3rem !important; }
     }
   </style>
+  <link rel="stylesheet" href="/blog.css" />
 </head>
 <body>
 
@@ -603,12 +605,13 @@
       </svg>
       <span class="nav-logo">SRQ Health & Fitness</span>
     </div>
-    <ul class="nav-links">
+    <button class="nav-menu-toggle" type="button" aria-expanded="false" aria-controls="primary-navigation">Menu +</button>
+    <ul class="nav-links" id="primary-navigation">
       <li><a href="#" class="active" onclick="showPage('home');return false;">Home</a></li>
       <li><a href="#" onclick="showPage('about');return false;">About</a></li>
       <li><a href="#" onclick="showPage('services');return false;">Services</a></li>
       <li><a href="#" onclick="showPage('contact');return false;">Contact</a></li>
-      <li><a href="#" onclick="showPage('blog');return false;">Blog</a></li>
+      <li><a href="/blog-personal-training-sarasota-fit" onclick="showPage('blog');return false;">Blog</a></li>
     </ul>
     <button class="nav-cta" onclick="showPage('contact')">Free Consult</button>
   </nav>
@@ -1264,60 +1267,7 @@
   <!-- ═══════════════ BLOG ═══════════════ -->
   <div id="page-blog" class="page">
 
-    <!-- BLOG HERO -->
-    <div class="hero" style="height:55vh;min-height:420px;">
-      <div class="hero-img" style="background-image:url('https://images.unsplash.com/photo-1526506118085-60ce8714f8c5?w=1600&q=85');"></div>
-      <div class="hero-overlay"></div>
-      <div class="hero-content">
-        <span class="hero-tag">★ Tips from Our Trainers</span>
-        <h2 class="hero-h1" style="font-size:clamp(60px,9vw,120px);">Know more.<br><span class="outline">Train better.</span></h2>
-      </div>
-    </div>
-
-    <!-- BLOG GRID -->
-    <div class="section">
-      <div class="inner">
-        <p class="label">Knowledge base</p>
-        <h2 class="big-title" style="margin-bottom:3rem;">Insights from<br><span>our trainers.</span></h2>
-
-        <!-- Featured post -->
-        <div style="display:grid;grid-template-columns:1.4fr 1fr;gap:4px;margin-bottom:4px;">
-          <div style="position:relative;overflow:hidden;height:400px;background:var(--blue-light);">
-            <img src="https://images.unsplash.com/photo-1517836357463-d25dfeac3438?w=900&q=80" alt="1-on-1 training results" loading="lazy" style="width:100%;height:100%;object-fit:cover;" />
-            <div style="position:absolute;inset:0;background:linear-gradient(to top,rgba(0,0,0,0.7) 0%,transparent 50%);"></div>
-            <div style="position:absolute;bottom:0;left:0;right:0;padding:2rem;">
-              <span style="background:var(--yellow);color:var(--text);font-size:10px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;padding:4px 12px;border-radius:100px;display:inline-block;margin-bottom:12px;">Training Tips</span>
-              <h3 style="font-family:var(--display);font-size:32px;color:#fff;line-height:1.05;letter-spacing:.5px;">Why 1-on-1 Training Gets Results Group Classes Can't</h3>
-            </div>
-          </div>
-          <div style="display:flex;flex-direction:column;gap:4px;">
-            <div style="position:relative;overflow:hidden;flex:1;background:var(--blue-light);">
-              <img src="https://images.unsplash.com/photo-1490645935967-10de6ba17061?w=600&q=80" alt="Nutrition tips" loading="lazy" style="width:100%;height:100%;object-fit:cover;" />
-              <div style="position:absolute;inset:0;background:linear-gradient(to top,rgba(0,0,0,0.65) 0%,transparent 60%);"></div>
-              <div style="position:absolute;bottom:0;left:0;right:0;padding:1.5rem;">
-                <span style="background:var(--yellow);color:var(--text);font-size:10px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;padding:3px 10px;border-radius:100px;display:inline-block;margin-bottom:8px;">Nutrition</span>
-                <h3 style="font-size:18px;color:#fff;line-height:1.2;font-weight:500;">Eating for Your Goals: A Simple Framework</h3>
-              </div>
-            </div>
-            <div style="position:relative;overflow:hidden;flex:1;background:var(--blue-light);">
-              <img src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=600&q=80" alt="Training after 50" loading="lazy" style="width:100%;height:100%;object-fit:cover;" />
-              <div style="position:absolute;inset:0;background:linear-gradient(to top,rgba(0,0,0,0.65) 0%,transparent 60%);"></div>
-              <div style="position:absolute;bottom:0;left:0;right:0;padding:1.5rem;">
-                <span style="background:var(--yellow);color:var(--text);font-size:10px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;padding:3px 10px;border-radius:100px;display:inline-block;margin-bottom:8px;">Active Aging</span>
-                <h3 style="font-size:18px;color:#fff;line-height:1.2;font-weight:500;">Training After 50: What Changes and What Doesn't</h3>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- More posts grid -->
-        <div class="blog-grid" style="margin-top:4px;">
-          <div class="blog-card"><div class="blog-photo"><img src="https://images.unsplash.com/photo-1526506118085-60ce8714f8c5?w=600&q=80" alt="Workout habit" loading="lazy" /></div><div class="blog-body"><p class="blog-cat">Motivation</p><h3>How to Build a Workout Habit That Actually Sticks</h3><p>Consistency beats intensity every time.</p><div class="blog-meta">[Author] · [Date]</div></div></div>
-          <div class="blog-card"><div class="blog-photo"><img src="https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?w=600&q=80" alt="Injury prevention" loading="lazy" /></div><div class="blog-body"><p class="blog-cat">Injury Prevention</p><h3>The 5 Most Common Training Mistakes We See</h3><p>Small form issues become big injuries. Here's what to watch for.</p><div class="blog-meta">[Author] · [Date]</div></div></div>
-          <div class="blog-card"><div class="blog-photo"><img src="https://images.unsplash.com/photo-1574680096145-d05b474e2155?w=600&q=80" alt="SRQ community" loading="lazy" /></div><div class="blog-body"><p class="blog-cat">Community</p><h3>Why Sarasota Keeps Voting Us Best Training Studio</h3><p>What our clients say makes SRQ different from everywhere else.</p><div class="blog-meta">[Author] · [Date]</div></div></div>
-        </div>
-      </div>
-    </div>
+    <!-- BLOG_CONTENT -->
 
     <div class="cta-banner">
       <div class="cta-inner">
@@ -1357,7 +1307,7 @@
           <li><a href="#" onclick="showPage('home');return false;">Home</a></li>
           <li><a href="#" onclick="showPage('about');return false;">About</a></li>
           <li><a href="#" onclick="showPage('services');return false;">Services</a></li>
-          <li><a href="#" onclick="showPage('blog');return false;">Blog</a></li>
+          <li><a href="/blog-personal-training-sarasota-fit" onclick="showPage('blog');return false;">Blog</a></li>
           <li><a href="#" onclick="showPage('contact');return false;">Contact</a></li>
         </ul>
       </div>
@@ -1393,14 +1343,33 @@
   </footer>
 
   <script>
-    function showPage(name) {
+    function showPage(name, updateHistory = true) {
+      if (name === 'blog' && !location.pathname.startsWith('/blog-personal-training-sarasota-fit')) {
+        location.href = '/blog-personal-training-sarasota-fit';
+        return;
+      }
+      const page = document.getElementById('page-' + name);
+      if (!page) {
+        location.href = name === 'blog' ? '/blog-personal-training-sarasota-fit' : '/#' + name;
+        return;
+      }
       document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
-      document.getElementById('page-' + name).classList.add('active');
+      page.classList.add('active');
       document.querySelectorAll('.nav-links a').forEach(a => a.classList.remove('active'));
       const link = document.querySelector(`.nav-links a[onclick*="'${name}'"]`);
       if (link) link.classList.add('active');
-      window.scrollTo({ top: 0, behavior: 'smooth' });
+      document.querySelector('.nav').classList.remove('menu-open');
+      document.querySelector('.nav-menu-toggle').setAttribute('aria-expanded', 'false');
+      if (updateHistory && location.pathname === '/') history.pushState(null, '', name === 'home' ? '/' : '/#' + name);
+      window.scrollTo({ top: 0, behavior: 'instant' });
     }
+    function restorePage() {
+      const name = location.hash.slice(1);
+      if (['home', 'about', 'services', 'contact', 'blog'].includes(name)) showPage(name, false);
+      else if (location.pathname === '/') showPage('home', false);
+    }
+    window.addEventListener('popstate', restorePage);
+    restorePage();
     function handleFormSubmit(e) {
       e.preventDefault();
       document.getElementById('form-success').style.display = 'block';

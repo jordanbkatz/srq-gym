@@ -1,0 +1,23 @@
+{
+  "postCount": 137,
+  "sourceCount": 137,
+  "archiveCount": 137,
+  "sourceInlineImageOccurrences": 159,
+  "sourceTables": 5,
+  "sourceWords": 89699,
+  "checks": [
+    "all article text (whitespace normalized only)",
+    "unique and complete slug set",
+    "titles, excerpts and dates vs complete archive when supplied",
+    "inline image count and alt text",
+    "heading, list, table, caption, blockquote and link counts"
+  ],
+  "errors": [],
+  "passed": true,
+  "build": {
+    "checkedPostRoutes": 137,
+    "checkedLocalWebpPaths": 292,
+    "errors": [],
+    "passed": true
+  }
+}

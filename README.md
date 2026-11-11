@@ -9,6 +9,34 @@ npm ci
 npm run dev
 ```
 
+The blog archive is available at `/blog-personal-training-sarasota-fit`. Each
+article keeps its original `/post/<slug>` URL. Vite serves these pages during
+development and generates their complete static HTML, metadata, and sitemap for
+production. The archive supports search, year filters, and pagination; all links
+and article content are present even without JavaScript.
+
+The migration includes all 137 original posts published from January 2020 through
+November 2026. `content/blog-posts.json` retains the original wording, metadata,
+captions, image descriptions, and source URLs. `content/blog-image-manifest.json`
+maps source images to local WebP files. Article images are at most 1440px wide;
+640px variants, responsive sources, and lazy loading keep page downloads small.
+
+To refresh from the original website and verify the migration:
+
+```sh
+python3 scripts/import-blog.py
+python3 scripts/optimize-blog-images.py
+npm run build
+python3 scripts/verify-blog.py --build-dir dist --report content/blog-migration-report.json
+```
+
+The import and verification scripts use Python's standard library. Image
+conversion additionally requires ImageMagick (`magick`) and Google's `cwebp`.
+Original responses and full-resolution downloads are cached in the system
+temporary directory, outside this repository. Verification compares every
+article's text and formatting with its source and checks the built article routes
+and local WebP assets. The checked-in report records the latest result.
+
 ## Cloudflare Pages
 
 - GitHub repository: `jordanbkatz/srq-gym`
